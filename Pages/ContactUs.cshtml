@@ -1,0 +1,49 @@
+﻿@page
+@model KhumaloCraft.Pages.ContactUsModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head> </head>
+<body style ="background-color: white">
+
+    <h1 style="color: #C19A6B;">Contact Us</h1>
+
+    <form action="#" method="post">
+        <label for="name" style="color: #C19A6B;">Name</label>
+        <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 2px solid #C19A6B; border-radius: 5px;"><br><br>
+
+        <label for="surname" style="color: #C19A6B;">Surname</label>
+        <input type="text" id="surname" name="surname" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 2px solid #C19A6B; border-radius: 5px;"><br><br>
+
+        <label for="email" style="color: #C19A6B;">Email</label>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 2px solid #C19A6B; border-radius: 5px;"><br><br>
+
+        <label for="message" style="color: #C19A6B;">Message:</label>
+        <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 2px solid #C19A6B; border-radius: 5px;"></textarea><br><br>
+
+        <button type="button" name="customSubmit" style="background-color: #C19A6B ; color: #FFFFFF; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            // Get form data
+            const name = document.getElementById("name").value.trim();
+            const surname = document.getElementById("surname").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            // Check if any of the fields are empty
+            if (!name || !surname || !email || !message) {
+                alert("Please fill out all fields before submitting.");
+                return; // Exit the function early if any field is empty
+            }
+
+            // If all fields are filled, display a pop-up message
+            alert("Message has been sent!");
+        }
+    </script>
+
+</body>
+</html>

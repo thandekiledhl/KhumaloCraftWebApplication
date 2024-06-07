@@ -1,0 +1,100 @@
+﻿@page
+@model KhumaloCraft.Pages.SendNotificationModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Change Notifications</title>
+    <style>
+        .notification {
+            border: 2px solid #C19A6B;
+            padding: 10px;
+            margin-bottom: 10px;
+            color: #C19A6B;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+            .notification.success {
+                border-color: #C19A6B;
+                color: #C19A6B;
+            }
+
+            .notification.error {
+                border-color: #C19A6B;
+                color: #C19A6B;
+            }
+
+            .notification img {
+                max-width: 100px;
+                margin-top: 10px;
+            }
+    </style>
+</head>
+<body>
+    <div id="notificationContainer"></div>
+    <script>
+        // Simulated product change data
+        const productChanges = [
+            {
+                name: 'Pottery: Textured Vase',
+                changeType: 'Discount',
+                message: '30% discount has been added on the vase!',
+                imageUrl: 'css/pot2.jpg'
+            },
+            {
+                name: 'Jewellery: Necklace & Earrings',
+                changeType: 'Price increase',
+                message: 'Price increased by 10%.',
+                imageUrl: 'css/jew2.jpg'
+            },
+            {
+                name: 'Leather: Belt',
+                changeType: 'Stock',
+                message: 'This product is out of stock.',
+                imageUrl: 'css/lea5.jpg'
+            }
+        ];
+
+        // Function to display notifications
+        function displayNotification(productChange) {
+            const notificationContainer = document.getElementById('notificationContainer');
+            const notification = document.createElement('div');
+            notification.classList.add('notification');
+
+            if (productChange.changeType === 'Discount') {
+                notification.classList.add('success');
+            } else {
+                notification.classList.add('error');
+            }
+
+            const message = document.createElement('p');
+            message.innerText = `${productChange.name}: ${productChange.message}`;
+            notification.appendChild(message);
+
+            // If an image URL is provided, include the image in the notification
+            if (productChange.imageUrl) {
+                const image = document.createElement('img');
+                image.src = productChange.imageUrl;
+                notification.appendChild(image);
+            }
+
+            notificationContainer.appendChild(notification);
+        }
+
+        function simulateProductChanges() {
+            productChanges.forEach(productChange => {
+                displayNotification(productChange);
+            });
+        }
+
+        simulateProductChanges();
+    </script>
+</body>
+</html>

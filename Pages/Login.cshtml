@@ -1,0 +1,41 @@
+﻿@page
+@model KhumaloCraft.Pages.LoginModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body style="background-color: white;">
+    <div class="container" style="background-color: #C19A6B; color: white; padding: 20px; border-radius: 10px; margin: 50px auto; width: 300px; text-align: center;">
+        <h2 style="color: black;">Login</h2>
+        <form id="loginForm" action="login_process.php" method="post" onsubmit="return redirectToMyWork()">
+            <label for="username" style="color: black ;">Username:</label>
+            <input type="text" id="username" name="username" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 2px solid  #C19A6B; border-radius: 5px;"><br><br>
+
+            <label for="password" style="color: black;">Password:</label>
+            <input type="password" id="password" name="password" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 2px solid white; border-radius: 5px;"><br><br>
+
+            <input type="submit" value="Login" style="background-color: white; color: black; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+
+        </form>
+
+        <p style="color: black;">Don't have an account? <a href="SignUp" style="color: white; text-decoration: none;">Sign Up</a></p>
+    </div>
+
+    <script>
+        function redirectToMyWork() {
+            
+            if ('login_success') {
+                window.location.href = 'http://localhost:5141/MyWork'; 
+                return false; 
+           
+            return true;
+        }
+    </script>
+</body>
+</html>
+

@@ -5,9 +5,9 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhumaloCraft", "KhumaloCraft\KhumaloCraft.csproj", "{9AC6DEDC-32E2-4E07-B2BC-C31F5730F989}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseLayer", "DatabaseLayer\DatabaseLayer.csproj", "{04FA5C6B-CD18-44E8-A69B-B2732D863D6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseLayer", "DatabaseLayer\DatabaseLayer.csproj", "{04FA5C6B-CD18-44E8-A69B-B2732D863D6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{95F1B5AC-6294-4ECD-90D7-52DC2BC15097}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{95F1B5AC-6294-4ECD-90D7-52DC2BC15097}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

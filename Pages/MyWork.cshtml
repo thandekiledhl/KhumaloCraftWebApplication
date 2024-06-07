@@ -1,0 +1,223 @@
+﻿@page
+@model KhumaloCraft.Pages.MyWorkModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        .box {
+            display: inline-block;
+            vertical-align: top;
+            width: 200px; /* Set the width as per your preference */
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+            .box img {
+                width: 100%;
+                height: auto;
+            }
+
+            .box p {
+                margin: 5px 0;
+                font-size: 16px;
+            }
+
+            .box:hover {
+                transform: scale(1.1);
+            }
+
+        /* CSS for shopping cart */
+        #cart {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+        }
+
+        #cartTotal {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <p>
+        James Khumalo is driven by the ambition to establish KhumaloCraft Emporium,
+        a global e-commerce platform showcasing handcrafted products, such as the ones below and connecting artisans worldwide with a discerning audience.
+    </p>
+
+    <p>
+        <b>Go to Notifications to see if there's news in regards to the products.</b>  <a href="SendNotification" style="color: #C19A6B; text-decoration: none;">Notification</a>
+    </p>
+
+    <h4 style="color: #C19A6B">
+        Step 1: Buy item you would like.
+    </h4>
+
+    <div class="container">
+        <h2>Pottery</h2>
+        <div class="box">
+            <img src="~/css/pot1.jpg" alt="Pot 1">
+            <p>Red Pot</p>
+            <p>R200</p>
+            <!-- Buy button -->
+            <button onclick="addItemToCart('Pottery','Red Pot',200)" style="background-color: #C19A6B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+        </div>
+        <div class="box">
+            <img src="~/css/pot2.jpg" alt="Pot 2">
+            <p>Textured Vase</p>
+            <!-- Buy button -->
+            <button onclick="addItemToCart('Pottery','Textured Vase',350)" style="background-color: #C19A6B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+        </div>
+        <div class="box">
+            <img src="~/css/pot3.jpg" alt="Pot 3">
+            <p>Modern Vase</p>
+            <p>R500</p>
+            <!-- Buy button -->
+            <button onclick="addItemToCart('Pottery','Modern Vase ',500)" style="background-color: #C19A6B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+        </div>
+        <div class="box">
+            <img src="~/css/pot4.jpg" alt="Pot 4">
+            <p>Printed Vase</p>
+            <p>R400</p>
+            <!-- Buy button -->
+            <button onclick="addItemToCart('Pottery','Printed Vase',400)" style="background-color: #C19A6B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+        </div>
+
+        <!-- Jewellery Items -->
+        <div class="gallery" style="background-color: #C19A6B">
+            <h2>Jewellery</h2>
+            <div class="box">
+                <img src="~/css/jew1.jpg" alt="Jew 1">
+                <p>Gold Necklace</p>
+                <p>R1500</p>
+                <!-- Buy button -->
+                <button onclick="addItemToCart('Jewellery','Gold Necklace',1500)" style="background-color: white; color: #C19A6B; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+            </div>
+            <div class="box">
+                <img src="~/css/jew2.jpg" alt="Jew 2">
+                <p>Necklace & Earrings</p>
+                <p>R700</p>
+                <!-- Buy button -->
+                <button onclick="addItemToCart('Jewellery','Necklace & Earrings',700)" style="background-color: white; color: #C19A6B; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+            </div>
+            <div class="box">
+                <img src="~/css/jew3.jpeg" alt="Jew 3">
+                <p>Gold&Black Earrings </p>
+                <p>R300</p>
+                <!-- Buy button -->
+                <button onclick="addItemToCart('Jewellery','Gold&Black Earrings',300)" style="background-color: white; color: #C19A6B; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+            </div>
+            <div class="box">
+                <img src="~/css/jew4.jpg" alt="Jew 4">
+                <p>RubyRing</p>
+                <p>R450</p>
+                <!-- Buy button -->
+                <button onclick="addItemToCart('Jewellery','RubyRing',450)" style="background-color: #C19A6B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+            </div>
+        </div>
+
+        <!-- Leather Items -->
+        <div class="gallery1">
+            <h2>Leather </h2>
+            <div class="box" width="600" height="400">
+                <img src="~/css/lea1.jpg" alt="Leather 1">
+                <p>Jacket</p>
+                <p>R400</p>
+                <!-- Buy button -->
+                <button onclick="addItemToCart('Leather','Jacket',400)" style="background-color: #C19A6B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+            </div>
+            <div class="box">
+                <img src="~/css/lea2.jpg" alt="Leather 2">
+                <p>Backpack</p>
+                <p>R250</p>
+                <!-- Buy button -->
+                <button onclick="addItemToCart('Leather','Backpack',250)" style="background-color: #C19A6B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+            </div>
+            <div class="box" width="600" height="400">
+                <img src="~/css/lea5.jpg" alt="Leather 3">
+                <p>Belt</p>
+                <p>R100</p>
+                <!-- Buy button -->
+                <button onclick="addItemToCart('Leather','Belt',100)" style="background-color: #C19A6B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+            </div>
+            <div class="box" width="600" height="400">
+                <img src="~/css/lea4.jpg" alt="Leather 4">
+                <p>Book Cover</p>
+                <p>R150</p>
+                <!-- Buy button -->
+                <button onclick="addItemToCart('Leather','Book Cover',150)" style="background-color: #C19A6B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Buy</button>
+            </div>
+        </div>
+
+        <h4 style="color: #C19A6B">
+            Step 2: See selected products then click checkout.
+        </h4>
+        <!-- Shopping Cart -->
+        <div id="cart" style="background-color: #C19A6B; text-align: left;">
+            <h2 style="text-align:center;">Shopping Cart</h2>
+            <p id="cartItems"></p>
+            <p id="cartTotal">Total: R0</p>
+            <a href="Checkout" style="background-color: white; color: #C19A6B; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; text-decoration: none;">Checkout</a>
+        </div>
+
+        <script>
+        
+            var cart = {};
+
+            function addItemToCart(category, itemName, price) {
+                var quantity = parseInt(prompt("Enter quantity for " + itemName + ":")) || 1;
+
+                
+                if (cart.hasOwnProperty(itemName)) {
+                    cart[itemName].quantity += quantity;
+                } else {
+                   
+                    cart[itemName] = {
+                        category: category,
+                        price: price,
+                        quantity: quantity
+                    };
+                }
+
+                updateCartDisplay();
+            }
+
+            
+            function updateCartDisplay() {
+                var cartItemsList = document.getElementById('cartItems');
+                var total = 0;
+
+                
+                cartItemsList.innerHTML = '';
+
+                
+                Object.keys(cart).forEach(function (itemName, index) {
+                    var item = cart[itemName];
+                    var itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+
+                    var li = document.createElement('li');
+                    li.textContent = (index + 1) + ". " + item.category + ': ' + itemName + ' x' + item.quantity + ' - R' + itemTotal;
+                    cartItemsList.appendChild(li);
+                });
+
+                
+                var cartTotal = document.getElementById('cartTotal');
+                cartTotal.textContent = 'Total: R' + total.toFixed(2);
+            }
+            
+        </script>
+
+</body>
+</html>
+
